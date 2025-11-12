@@ -4,39 +4,66 @@
 #include "Animal.h"
 #include "animal.h"
 #include "Mammal.h"
+//
 
-
-class Bird : public animal {
+include "animal.h"
+class Enclosure {
 private:
-    float wingSpan;
+
+    int capacity;
+    Animal* animal;
+    int currentCount;
 
 public:
 
-    Bird() : animal() {
-        wingSpan = 0.0;
-    }
-
-
-    Mammal(string W) : animal(n, a) {
-        furColor = W;
-    }
-
-
-    ~Mammal() {
+    Enclosure() {
 
     }
 
 
-    void setWingspan(int W){
-        wingSpan= W;
+    Course( int count, int c) {
+
+        capacity =c;
+        currentCount = count;
+        currentCount = 0;
+        animal = new Animal[capacity];
     }
 
 
+    ~Animal() {
+        delete[] animal;
+    }
 
-    float getWingSpan() {
-        return wingSpan;
+
+    void addAnimal(const Animal& a) {
+        if (currentCount < capacity) {
+            Animal[currentAnimal] = a;
+            currentCount++;
+        } else {
+            cout << "Capcity is full!" << endl;
+        }
+    }
+
+
+    void displayAnimals() {
+        cout << "Animal: " << currentCount << " - " << currentCount << endl;
+
+        if (currentCount == 0)
+            cout << "None" << endl;
+        else {
+            for (int i = 0; i < currentCount; i++) {
+                cout << animal[i].getName();
+                if (i != currentCount - 1)
+                    cout << ", ";
+            }
+            cout << endl;
+        }
     }
 };
+
+#endif
+
+#endif //ANIMAL_ENCLOSURE_H
 
 //define enclosure class here 
 
